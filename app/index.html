@@ -1,27 +1,18 @@
-<html lang="en" ng-app>
+<!doctype html>
+<html lang="en" ng-app="marvelheroesApp">
   <head>
     <meta charset="utf-8">
     <title>Heróis da Marvel</title>
     <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="app.css" />
     <script src="lib/angular/angular.js"></script>
+    <script src="app.js"></script>
   </head>
-  <body>
+  <body ng-controller="HeroListController">
 
     <ul>
-      <li>
-        <span>Capitão América</span>
-        <p>
-          "Sempre que alguém tenta vencer uma guerra, antes que ela comece, pessoas inocentes morrem. É sempre assim."
-        </p>
-      </li>
-      <li>
-        <span>Homem de Ferro</span>
-        <p>
-          "Você pode tirar meus trajes, você pode tirar a minha casa, mas há uma coisa que você nunca pode tirar de mim: eu sou o Homem de Ferro!"
-        </p>
+      <li ng-repeat="hero in heroes">
+        <span>{{hero.name}}</span>
+        <p>{{hero.snippet}}</p>
       </li>
     </ul>
-
-  </body>
-</html>
