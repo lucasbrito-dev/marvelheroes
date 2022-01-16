@@ -7,12 +7,11 @@
     <link rel="stylesheet" href="app.css" />
     <script src="lib/angular/angular.js"></script>
     <script src="app.js"></script>
+    <script src="hero-list.component.js"></script>
   </head>
-  <body ng-controller="HeroListController">
+  <body>
 
-    <ul>
-      <li ng-repeat="hero in heroes">
-        <span>{{hero.name}}</span>
-        <p>{{hero.snippet}}</p>
-      </li>
-    </ul>
+    <!-- Usa um componente customizado para renderizar uma lista de heróis -->
+    <hero-list></hero-list>
+
+  </body>
