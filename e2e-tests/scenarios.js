@@ -52,6 +52,14 @@ describe('MarvelHeroes Application', function() {
       ]);
     });
 
+    it('should render hero specific links', function() {
+      var query = element(by.model('$ctrl.query'));
+      query.sendKeys('capt');
+
+      element.all(by.css('.heroes li a')).first().click();
+      expect(browser.getCurrentUrl()).toContain('index.html#!/heroes/1009220');
+    });
+
   });
 
 });

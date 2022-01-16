@@ -21,8 +21,11 @@
       <!--Body content-->
 
       <ul class="heroes">
-        <li ng-repeat="hero in $ctrl.heroes | filter:$ctrl.query | orderBy:$ctrl.orderProp">
-          <span>{{hero.name}}</span>
+        <li ng-repeat="hero in $ctrl.heroes | filter:$ctrl.query | orderBy:$ctrl.orderProp" class="thumbnail">
+          <a href="#!/heroes/{{hero.id}}" class="thumb">
+            <img ng-src="{{hero.imageUrl}}" alt="{{hero.name}}" />
+          </a>
+          <a href="#!/heroes/{{hero.id}}">{{hero.name}}</a>
           <p>{{hero.snippet}}</p>
         </li>
       </ul>
