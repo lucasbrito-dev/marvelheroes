@@ -7,12 +7,19 @@ describe('heroList', function() {
 
   // Testa o controller
   describe('heroListController', function() {
+    var ctrl;
 
-    it('deve criar um model `heroes` com 3 heróis', inject(function($componentController) {
-      var ctrl = $componentController('heroList');
-
-      expect(ctrl.heroes.length).toBe(3);
+    beforeEach(inject(function($componentController) {
+      ctrl = $componentController('heroList');
     }));
+
+    it('deve criar um model `heroes` com 3 heróis', function() {
+      expect(ctrl.heroes.length).toBe(3);
+    });
+
+    it('deve setar um valor default para o model `orderProp`', function() {
+      expect(ctrl.orderProp).toBe('age');
+    });
 
   });
 
