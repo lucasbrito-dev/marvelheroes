@@ -3,7 +3,7 @@
 describe('heroList', function() {
 
   // Carrega o módulo que contém o componente `heroList` antes de cada teste
-  beforeEach(module('marvelheroesApp'));
+  beforeEach(module('heroList'));
 
   // Testa o controller
   describe('heroListController', function() {

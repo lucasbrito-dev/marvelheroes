@@ -2,15 +2,9 @@
 
 // Registra o component `heroList`, junto com seus controller e template associados
 angular.
-  module('marvelheroesApp').
+  module('heroList').
   component('heroList', {
-    template:
-        '<ul>' +
-          '<li ng-repeat="hero in $ctrl.heroes">' +
-            '<span>{{hero.name}}</span>' +
-            '<p>{{hero.snippet}}</p>' +
-          '</li>' +
-        '</ul>',
+    templateUrl: 'hero-list/hero-list.template.html',
     controller: function HeroListController() {
       this.heroes = [
         {
