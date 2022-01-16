@@ -1,7 +1,21 @@
-<ul>
-    <li ng-repeat="hero in $ctrl.heroes">
-      <span>{{hero.name}}</span>
-      <p>{{hero.snippet}}</p>
-    </li>
-  </ul>
-  
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+      <!--Sidebar content-->
+
+      Search: <input ng-model="$ctrl.query" />
+
+    </div>
+    <div class="col-md-10">
+      <!--Body content-->
+
+      <ul class="heroes">
+        <li ng-repeat="hero in $ctrl.heroes | filter:$ctrl.query">
+          <span>{{hero.name}}</span>
+          <p>{{hero.snippet}}</p>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>
