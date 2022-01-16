@@ -2,22 +2,32 @@
 
 describe('heroList', function() {
 
-  // Carrega o módulo que contém o componente `heroList` antes de cada teste
+  // Load the module that contains the `heroList` component before each test
   beforeEach(module('heroList'));
 
-  // Testa o controller
-  describe('heroListController', function() {
-    var ctrl;
+  // Test the controller
+  describe('HeroListController', function() {
+    var $httpBackend, ctrl;
 
-    beforeEach(inject(function($componentController) {
+    // The injector ignores leading and trailing underscores here (i.e. _$httpBackend_).
+    // This allows us to inject a service and assign it to a variable with the same name
+    // as the service while avoiding a name conflict.
+    beforeEach(inject(function($componentController, _$httpBackend_) {
+      $httpBackend = _$httpBackend_;
+      $httpBackend.expectGET('heroes/heroes.json')
+                  .respond([{name: 'Nexus S'}, {name: 'Motorola DROID'}]);
+
       ctrl = $componentController('heroList');
     }));
 
-    it('deve criar um model `heroes` com 3 heróis', function() {
-      expect(ctrl.heroes.length).toBe(3);
+    it('should create a `heroes` property with 2 heroes fetched with `$http`', function() {
+      expect(ctrl.heroes).toBeUndefined();
+
+      $httpBackend.flush();
+      expect(ctrl.heroes).toEqual([{name: 'Nexus S'}, {name: 'Motorola DROID'}]);
     });
 
-    it('deve setar um valor default para o model `orderProp`', function() {
+    it('should set a default value for the `orderProp` property', function() {
       expect(ctrl.orderProp).toBe('age');
     });
 
