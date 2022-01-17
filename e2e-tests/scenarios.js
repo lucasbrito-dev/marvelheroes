@@ -5,10 +5,15 @@
 
 describe('MarvelHeroes Application', function() {
 
-  describe('heroList', function() {
+  it('should redirect `index.html` to `index.html#!/heroes', function() {
+    browser.get('index.html');
+    expect(browser.getCurrentUrl()).toContain('index.html#!/heroes');
+  });
+
+  describe('View: Hero list', function() {
 
     beforeEach(function() {
-      browser.get('index.html');
+      browser.get('index.html#!/heroes');
     });
 
     it('should filter the hero list as a user types into the search box', function() {

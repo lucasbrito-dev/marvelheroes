@@ -2,6 +2,7 @@
 
 // Define the `marvelheroesApp` module
 angular.module('marvelheroesApp', [
-  // ...which depends on the `heroList` module
+  'ngRoute',
+  'heroDetail',
   'heroList'
 ]);
