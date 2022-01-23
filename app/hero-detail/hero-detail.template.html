@@ -1,0 +1,64 @@
+<img ng-src="{{$ctrl.hero.images[0]}}" class="hero" />
+
+<h1>{{$ctrl.hero.name}}</h1>
+
+<p>{{$ctrl.hero.description}}</p>
+
+<ul class="hero-thumbs">
+  <li ng-repeat="img in $ctrl.hero.images">
+    <img ng-src="{{img}}" />
+  </li>
+</ul>
+
+<ul class="specs">
+  <li>
+    <span>Aparições em Revistas em Quadrinhos</span>
+    <dl>
+      <dt>Revistas Disponíveis na Marvel</dt>
+      <dd>{{$ctrl.hero.comics.available}}</dd>
+      <dt>{{$ctrl.hero.comics.returned}} primeiras revistas:</dt>
+      <dd ng-repeat="revista in $ctrl.hero.comics.items">{{revista.name}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Aparições em Séries numeradas de Revistas em Quadrinhos</span>
+    <dl>
+      <dt>Séries Disponíveis na Marvel</dt>
+      <dd>{{$ctrl.hero.series.available}}</dd>
+      <dt>{{$ctrl.hero.series.returned}} primeiras séries:</dt>
+      <dd ng-repeat="serie in $ctrl.hero.series.items">{{serie.name}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Aparições em Estórias</span>
+    <dl>
+      <dt>Estórias disponíveis</dt>
+      <dd>{{$ctrl.hero.stories.available}}</dd>
+      <dt>{{$ctrl.hero.stories.returned}} primeiras estórias:</dt>
+      <dd ng-repeat="story in $ctrl.hero.stories.items">{{story.name}} [tipo: {{story.type}}]</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Aparições em Eventos/Enredos</span>
+    <dl>
+      <dt>Eventos disponíveis</dt>
+      <dd>{{$ctrl.hero.events.available}}</dd>
+      <dt>{{$ctrl.hero.events.returned}} primeiros eventos:</dt>
+      <dd ng-repeat="evento in $ctrl.hero.events.items">{{evento.name}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Links úteis:</span>
+    <dl ng-repeat="link in $ctrl.hero.urls">
+      <dt ng-if="link.type === 'detail'">
+        <a href="{{link.url}}">{{$ctrl.hero.name}} em detalhes</a>
+      </dt>
+      <dt ng-if="link.type === 'wiki'">
+        <a href="{{link.url}}">Wiki {{$ctrl.hero.name}}</a>
+      </dt>
+      <dt ng-if="link.type === 'comiclink'">
+        <a href="{{link.url}}">Todos quadrinhos de {{$ctrl.hero.name}}</a>
+      </dt>
+    </dl>
+  </li>
+</ul>

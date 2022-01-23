@@ -59,10 +59,22 @@ describe('MarvelHeroes Application', function() {
 
     it('should render hero specific links', function() {
       var query = element(by.model('$ctrl.query'));
-      query.sendKeys('capt');
+      query.sendKeys('capit');
 
       element.all(by.css('.heroes li a')).first().click();
       expect(browser.getCurrentUrl()).toContain('index.html#!/heroes/1009220');
+    });
+
+  });
+
+  describe('View: Hero detail', function() {
+
+    beforeEach(function() {
+      browser.get('index.html#!/heroes/1009220');
+    });
+
+    it('should display placeholder page with `heroId`', function() {
+      expect(element(by.binding('$ctrl.heroId')).getText()).toBe('1009220');
     });
 
   });
