@@ -9,8 +9,8 @@ angular.
       function HeroDetailController($http, $routeParams) {
         var self = this;
 
-        $http.get('heroes/' + $routeParams.heroId + '.json').then(function(response) {
-          self.hero = response.data;
+        $http.get('https://gateway.marvel.com/v1/public/characters/' + $routeParams.heroId + '?ts=1&apikey=5a237863b3cc2061003cbbc4fe20dc06&hash=bd4b447a65ef5d6b174f87cf9db6d2db').then(function(response) {
+          self.hero = response.data.data.results[0];
         });
       }
     ]

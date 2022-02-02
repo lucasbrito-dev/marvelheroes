@@ -3,19 +3,19 @@
       "id": 1009220,
       "imageUrl": "http://i.annihil.us/u/prod/marvel/i/mg/3/50/537ba56d31087/standard_amazing.jpg",
       "name": "Capitão América",
-      "snippet": "\"Sempre que alguém tenta vencer uma guerra, antes que ela comece, pessoas inocentes morrem. É sempre assim.\"",
-      "age": 1
+      "description": "\"Sempre que alguém tenta vencer uma guerra, antes que ela comece, pessoas inocentes morrem. É sempre assim.\"",
+      "modified": 1
     }, {
       "id": 1009368,
       "imageUrl": "http://i.annihil.us/u/prod/marvel/i/mg/9/c0/527bb7b37ff55/standard_amazing.jpg",        
       "name": "Homem de Ferro",
-      "snippet": "\"Você pode tirar meus trajes, você pode tirar a minha casa, mas há uma coisa que você nunca pode tirar de mim: eu sou o Homem de Ferro!\"",
-      "age": 2
+      "description": "\"Você pode tirar meus trajes, você pode tirar a minha casa, mas há uma coisa que você nunca pode tirar de mim: eu sou o Homem de Ferro!\"",
+      "modified": 2
     }, {
       "id": 1009351,
       "imageUrl": "http://i.annihil.us/u/prod/marvel/i/mg/5/a0/538615ca33ab0/standard_amazing.jpg",   
       "name": "Hulk",
-      "snippet": "\"Não me deixe com raiva! Você não gostaria de mim quando estou com raiva.\"",
-      "age": 3
+      "description": "\"Não me deixe com raiva! Você não gostaria de mim quando estou com raiva.\"",
+      "modified": 3
     }
 ]

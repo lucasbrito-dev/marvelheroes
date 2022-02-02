@@ -93,7 +93,7 @@ agent.addListener('next', function (error, agent) {
         character.age = age++;
         character.imageUrl = 'http://google.com' + 
           jquery(this).find('img.character').attr('src');
-        character.snippet = jquery(this).find('.description').text().trim();
+        character.description = jquery(this).find('.description').text().trim();
         character.name = jquery(this).find('strong').text().trim();
         character.carrier = jquery(this).find('.buy-from img').attr('alt');
         character.buyUrl = jquery(this).find('.buy-from a').attr('href');

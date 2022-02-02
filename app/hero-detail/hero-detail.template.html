@@ -1,12 +1,12 @@
-<img ng-src="{{$ctrl.hero.images[0]}}" class="hero" />
+<img ng-src="{{$ctrl.hero.thumbnail.path + '/standard_amazing.' + $ctrl.hero.thumbnail.extension}}" class="hero" />
 
 <h1>{{$ctrl.hero.name}}</h1>
 
 <p>{{$ctrl.hero.description}}</p>
 
 <ul class="hero-thumbs">
-  <li ng-repeat="img in $ctrl.hero.images">
-    <img ng-src="{{img}}" />
+  <li>
+    <img ng-src="{{$ctrl.hero.thumbnail.path + '/standard_fantastic.' + $ctrl.hero.thumbnail.extension}}" />
   </li>
 </ul>
 

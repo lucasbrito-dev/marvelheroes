@@ -12,7 +12,7 @@
         Ordenar por:
         <select ng-model="$ctrl.orderProp">
           <option value="name">Alfabética</option>
-          <option value="age">Data modificado</option>
+          <option value="modified">Data modificado</option>
         </select>
       </p>
 
@@ -23,10 +23,10 @@
       <ul class="heroes">
         <li ng-repeat="hero in $ctrl.heroes | filter:$ctrl.query | orderBy:$ctrl.orderProp" class="thumbnail">
           <a href="#!/heroes/{{hero.id}}" class="thumb">
-            <img ng-src="{{hero.imageUrl}}" alt="{{hero.name}}" />
+            <img ng-src="{{hero.thumbnail.path  + '/standard_amazing.' + hero.thumbnail.extension}}" alt="{{hero.name}}" />
           </a>
           <a href="#!/heroes/{{hero.id}}">{{hero.name}}</a>
-          <p>{{hero.snippet}}</p>
+          <p>{{hero.description}}</p>
         </li>
       </ul>
 
